@@ -29,8 +29,6 @@ def get_reagent(var):
     time.sleep(delayval2)
     var.write(b'A0X-40Y-120Z200')
     time.sleep(delayval)
-    # var.write(b'd')
-    # time.sleep(delayval)
 
 
 def set_reagent(var):
@@ -43,6 +41,7 @@ def set_reagent(var):
     var.write(b'A0X-28Y117Z200')
     time.sleep(delayval)
 
+
 def put_chip(var):
     var.write(b'A0X85Y155Z200')
     time.sleep(delayval)
@@ -51,7 +50,7 @@ def put_chip(var):
 
 
 def go_home(var):
+    var.write(b'A0X0Y0Z200')
+    time.sleep(delayval)
     var.write(b'h')
 
-def pos(var,comm):
-    var.write(comm.encode('utf-8'))
